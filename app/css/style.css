@@ -15,14 +15,23 @@ body {
 }
 
 .folio {
-  --current-slide: 0;
+  position: relative;
+  height: 100%;
+}
+
+.pages {
   position: relative;
   height: 600px;
   width: 80%;
   margin: 0 auto;
+  display: none;
 }
 
-.monitor-image, .monitor-video {
+.current-page {
+  display: block;
+}
+
+.monitor-image, .monitor-video, .encode-image, .encode-video {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -45,6 +54,7 @@ img.current-slide {
   list-style-type: none;
   width: 100%;
   height: 100%;
+  transition: transform 750ms ease-in;
 }
 
 .carousel-slide {
@@ -73,6 +83,7 @@ p.carousel-header {
   text-align: center;
   margin: 0;
   padding: 0.8rem;
+  line-height: 3rem;
 }
 
 button.carousel-button, button.page-button {
@@ -164,8 +175,4 @@ button.carousel-button, button.page-button {
 
 .page-indicator {
   margin: 7.5px;
-}
-
-.current-slide {
-  background: black;
 }/*# sourceMappingURL=style.css.map */
