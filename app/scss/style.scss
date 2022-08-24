@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+@import 'util/default.scss';
+
+@mixin max-width {
+    max-width: 100vw;
+   
+    max-height: 100vh;    
+}
+.folio {
+    position: relative;
+    height: 100%;
+}
+
+//Contains slides, buttons, and indicators
+.pages {
+    //sets the position of carousel container
+    position:relative;
+    height:600px;
+    width: 80%;
+    margin: 0 auto;
+    display: none;
+}
+.current-page{
+    display: block;
+}
+
+//Media inside carousel
+.monitor-image, .monitor-video, .encode-image, .encode-video{
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;
+    text-align: center;
+}
+img.current-slide{
+    display:block;
+}
+
+//Contains the container of slides
+.carousel-track-container{
+    height: 100%;
+    position: relative;
+}
+
+//Contains slides
+.carousel-track{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    transition: transform 750ms ease-in;
+}
+
+//Contains media
+.carousel-slide{
+    object-fit: contain;
+    text-align: center;
+    //centers the image and making images not warped
+    
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent !important;
+}
+li.current-slide{
+    display:block;
+}
+
+.carousel-caption{
+    display:block;
+    width: 100%;
+}
+p.carousel-header {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    padding: 0.8rem;
+    line-height: 3rem;
+}
+
+//buttons
+button.carousel-button, button.page-button{
+    $button-size: 50px;
+    max-width: $button-size;
+    max-height: $button-size;
+    
+    background: transparent;
+    border: none;
+}
+
+.button-image {
+    text-align: center;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    overflow: auto;
+    display: block;
+}
+.left-button{
+    left: 0%;
+}
+.right-button{
+    right: 0%;
+}
+.page-button{
+    position: absolute;
+    border-radius:50%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+.top-button{
+    top: 0%;
+}
+.bottom-button{
+    bottom: 0%;
+}
+
+.is-hidden{
+    display: none;
+}
+//Container for carousel controller
+.controls, .page-controls{
+    display: flex;
+    justify-content: center;
+}
+
+//contains indicators
+.carousel-nav, .page-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+.page-controls{
+    position: absolute;
+    height: 100%;
+    left: 0%;
+    top:0%;
+    z-index: 1;
+    box-sizing: border-box;
+}
+.page-nav{
+    flex-direction: column;
+}
+//indicators
+.carousel-indicator, .page-indicator {
+    background: grey;
+    border: 0;
+    border-radius: 50%;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.carousel-indicator{
+    margin: 0 7.5px;
+}
+.page-indicator{
+    margin: 7.5px;
+}
+
+
