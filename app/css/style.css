@@ -9,37 +9,163 @@
   height: 98vh;
 }
 
-.items {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 95vh;
-  flex-wrap: wrap;
+body {
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
-.content:first-child {
-  align-items: left;
-  text-align: left;
+.folio {
+  --current-slide: 0;
+  position: relative;
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.content {
-  width: 50%;
+.monitor-image, .monitor-video {
+  width: 100%;
   height: 100%;
-  display: grid;
-  justify-content: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  text-align: center;
 }
 
-.content-title {
-  font-size: 4rem;
-  line-height: 1rem;
+img.current-slide {
+  display: block;
 }
 
-.content-description {
-  font-size: 2rem;
-  line-height: 1.5rem;
+.carousel-track-container {
+  height: 100%;
+  position: relative;
 }
 
-.content-child {
+.carousel-track {
   margin: 0;
   padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  -o-object-fit: contain;
+     object-fit: contain;
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent !important;
+}
+
+li.current-slide {
+  display: block;
+}
+
+.carousel-caption {
+  display: block;
+  width: 100%;
+}
+
+p.carousel-header {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  padding: 0.8rem;
+}
+
+button.carousel-button, button.page-button {
+  max-width: 50px;
+  max-height: 50px;
+  background: transparent;
+  border: none;
+}
+
+.button-image {
+  text-align: center;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: auto;
+  display: block;
+}
+
+.left-button {
+  left: 0%;
+}
+
+.right-button {
+  right: 0%;
+}
+
+.page-button {
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.top-button {
+  top: 0%;
+}
+
+.bottom-button {
+  bottom: 0%;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.controls, .page-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-nav, .page-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.page-controls {
+  position: absolute;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.page-nav {
+  flex-direction: column;
+}
+
+.carousel-indicator, .page-indicator {
+  background: grey;
+  border: 0;
+  border-radius: 50%;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.carousel-indicator {
+  margin: 0 7.5px;
+}
+
+.page-indicator {
+  margin: 7.5px;
+}
+
+.current-slide {
+  background: black;
 }/*# sourceMappingURL=style.css.map */
