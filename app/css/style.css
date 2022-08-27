@@ -24,14 +24,10 @@ body {
   height: 600px;
   width: 80%;
   margin: 0 auto;
-  display: none;
-}
-
-.current-page {
   display: block;
 }
 
-.monitor-image, .monitor-video, .encode-image, .encode-video {
+.media {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -76,6 +72,9 @@ li.current-slide {
 .carousel-caption {
   display: block;
   width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem auto;
 }
 
 p.carousel-header {
